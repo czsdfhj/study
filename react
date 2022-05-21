@@ -1,0 +1,5 @@
+redux中间件
+提供第三方插件的模式，自定义拦截action->reducer的过程。变为action-> middlewares->reducer。这种机制可以让我们改变数据流，实现如异步action，action过滤，日志输出，异常报告等功能。
+常见的中间件：redux-logger：提供日志输出；redux-thunk：处理异步操作；redux-promise：处理异步操作；actionCreator 的返回值是promise
+缺点：1.一个组件所需要的数据，必须由父组件传过来，而不能像flux中直接从store取。
+2.当一个组件相关数据更新时，即使父组件不需要用到这个组件，父组件还是会重新render，可能会有效率影响，或者需要写复杂的shouldComponentUpdate进行判断。
